@@ -1,0 +1,125 @@
+
+.buttonContainer {
+    display: flex;
+    justify-content: end;
+    align-self: end;
+}
+
+.sortButton {
+    border-radius: 128px;
+    height: 48px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;    
+    border-color: var(--gray-alpha-200);
+    min-width: 200px;
+
+    &:hover {
+        background: rgb(184 194 255);
+        border-color: transparent;
+    }
+}
+
+@keyframes fade {
+    from {
+      opacity: 0.5;
+    }
+  
+    to {
+      opacity: 0.8;
+    }
+}
+
+.placeholderText {
+    color: transparent;  
+    background-color: #0000000d;
+    animation: fade 0.8s infinite alternate;
+}
+
+/* Table styles copied (and adjusted) from the responsive table in this example: */
+/* https://codepen.io/AllThingsSmitty/pen/MyqmdM */
+
+.mainTable {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+  
+.mainTableCaption {
+    font-size: 1.5em;
+    margin: .5em 0 .75em;
+}
+  
+.mainTableTableRow {
+    border: 1px solid #ddd;
+}
+  
+.mainTableTableHeader,
+.mainTableTableCell {
+    padding: .625em;
+    text-align: start;
+}
+  
+.zebraRow:nth-of-type(odd) {
+    /* background-color: rgb(230 242 255); */
+    background-color: rgb(184 194 255);
+}
+
+.pseudoHeader {
+    display: none;
+}
+  
+@media screen and (max-width: 871px) {
+    .mainTable {
+        border: 0;
+    }
+
+    .mainTableCaption {
+        font-size: 1.3em;
+    }
+
+    .mainTableTableHeader {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+    }
+
+    .mainTableTableRow {
+        display: block;
+        margin-bottom: .625em;
+    }
+
+    .mainTableTableCell {
+        border-bottom: 1px solid #ddd;
+        display: block;
+        font-size: .8em;
+        text-align: right;
+    }
+
+    .mainTableTableCellContent::before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+
+    .mainTableTableCell:last-child {
+        border-bottom: 0;
+    }
+    .pseudoHeader {
+        display: block;
+        float: left;
+    }
+}
